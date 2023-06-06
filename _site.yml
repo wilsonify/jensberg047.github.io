@@ -1,12 +1,12 @@
 name: "mysite"
-title: "My Website"
+title: "Jen Berg"
 description: |
-  My Website
+  Academic website for Jen Berg
 output_dir: "docs"
 navbar:
   right:
     - text: "Home"
       href: index.html
-    - text: "About"
-      href: about.html
+    - text: "Research"
+      href: research.html
 output: distill::distill_article

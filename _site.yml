@@ -5,8 +5,6 @@ description: |
 output_dir: "docs"
 navbar:
   right:
-    - text: "About Me"
-      href: index.html
     - text: "Teaching"
       href: teaching.html
     - text: "Scholarship"

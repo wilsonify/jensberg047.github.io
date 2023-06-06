@@ -6,23 +6,31 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2023-06-06T13:33:52-04:00"
+      "last_modified": "2023-06-06T15:19:01-04:00"
     },
     {
       "path": "index.html",
       "title": "Jen Berg",
-      "description": "Testing this out!\n",
+      "description": "I am an Assistant Professor of **[Mathematics](https://www.bucknell.edu/academics/college-arts-sciences/academic-departments-programs/mathematics)** at **[Bucknell University](https://www.bucknell.edu/)**.\n\nIn 2016-19 I was an RTG Lovett Instructor at Rice University. I received my PhD in 2016 from the University of Texas at Austin and my B.S. in Mathematics from UIUC in 2010.  I grew up in Chicago, Illinois.\n\nMy research interests lie at the intersection of number theory and geometry. Visit my **[scholarship](research.html)** page for more information about the flavor of questions I like to think about.\n",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2023-06-06T13:33:53-04:00"
+      "last_modified": "2023-06-06T15:19:02-04:00"
     },
     {
       "path": "research.html",
-      "title": "Research",
+      "title": "Scholarship",
       "author": [],
       "date": "2023-06-06",
       "contents": "\n\n\n\n",
-      "last_modified": "2023-06-06T13:33:53-04:00"
+      "last_modified": "2023-06-06T15:19:02-04:00"
+    },
+    {
+      "path": "teaching.html",
+      "title": "Teaching",
+      "author": [],
+      "date": "2023-06-06",
+      "contents": "\nR Markdown\nThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.\nWhen you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:\n\n\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00  \n\nIncluding Plots\nYou can also embed plots, for example:\n\n\n\nNote that the echo = FALSE parameter was added to the code chunk to prevent printing of the R code that generated the plot.\n\n\n\n",
+      "last_modified": "2023-06-06T15:19:02-04:00"
     }
   ],
   "collections": []

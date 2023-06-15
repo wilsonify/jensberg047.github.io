@@ -17,7 +17,7 @@ jobs:
         run: |
           docker run --rm \
           --name jensberg047.github.io.builder \
-          --volume jensberg047.github.io:/usr/src/app \
+          --volume /home/runner/work/jensberg047.github.io/jensberg047.github.io:/usr/src/app \
           ghcr.io/wilsonify/jensberg047.github.io.builder:main \
           Rscript -e 'rmarkdown::render_site()'
 

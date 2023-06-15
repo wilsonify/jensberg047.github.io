@@ -1,4 +1,5 @@
 FROM r-base:latest
 WORKDIR /usr/src/app
-COPY install.R /usr/src/app/install.R
-RUN Rscript install.R
+RUN R -e 'install.packages("rmarkdown", dependencies=TRUE, repos="http://cran.rstudio.com/")'
+RUN R -e 'install.packages("distill", dependencies=TRUE, repos="http://cran.rstudio.com/")'
+RUN R -e 'install.packages("postcards", dependencies=TRUE, repos="http://cran.rstudio.com/")'

@@ -1,0 +1,4 @@
+FROM r-base:latest
+RUN Rscript -e 'install.packages("rmarkdown")'
+RUN Rscript -e 'install.packages("distill")'
+RUN Rscript -e 'install.packages("postcards")'

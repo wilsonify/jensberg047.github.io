@@ -13,20 +13,13 @@ jobs:
           submodules: recursive  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-      - name: Setup R
-        uses: r-lib/actions/setup-r@v2
-
-      - name: Setup Pandoc
-        uses: r-lib/actions/setup-pandoc@v1
-
-      - name: Setup Rmarkdown
-        run: |
-          Rscript -e 'install.packages("rmarkdown")'
-          Rscript -e 'install.packages("distill")'
-          Rscript -e 'install.packages("postcards")'
-
       - name: Render site
-        run: Rscript -e 'rmarkdown::render_site()'
+        run: |
+          docker run --rm \
+          --name jensberg047.github.io.builder \
+          --volume jensberg047.github.io:/usr/src/app \
+          ghcr.io/wilsonify/jensberg047.github.io.builder:main \
+          Rscript -e 'rmarkdown::render_site()'
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

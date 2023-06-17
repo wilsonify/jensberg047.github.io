@@ -1,17 +1,30 @@
+# function for creating version files with version string and date
+ver_file = echo "1.0.0" > $(1) && date +%Y-%m-%d >> $(1)
 
-all: image
+all: clean build/image.txt
 
-base:
-	docker build --progress=plain -t ghcr.io/wilsonify/jensberg047.github.io.base:latest -f Dockerfile-base .
+clean:
+	rm -rf build
+	rm -rf docs
 
-builder: base
-	docker build --progress=plain -t ghcr.io/wilsonify/jensberg047.github.io.builder:latest -f Dockerfile-builder .
+build_dir:
+	mkdir -p build
 
-image: builder
-	docker build --progress=plain -t ghcr.io/wilsonify/jensberg047.github.io:latest -f Dockerfile .
+build/base.txt: build_dir
+	docker build --progress=plain -t ghcr.io/wilsonify/jensberg047.github.io.base:latest -f Dockerfile-base . && $(call ver_file, $@)
 
-run: image
-	docker run --rm --name jensberg047.github.io -p 32768:80 ghcr.io/wilsonify/jensberg047.github.io:latest
+build/builder.txt: build/base.txt
+	docker build --progress=plain -t ghcr.io/wilsonify/jensberg047.github.io.builder:latest -f Dockerfile-builder . && $(call ver_file, $@)
+
+build/image.txt: build/builder.txt
+	docker build --progress=plain -t ghcr.io/wilsonify/jensberg047.github.io:latest -f Dockerfile . && $(call ver_file, $@)
+
+build/run.txt: build/image.txt
+	docker run --rm -d --name jensberg047.github.io -p 32768:80 ghcr.io/wilsonify/jensberg047.github.io:latest && $(call ver_file, $@)
+
+build/update.txt: build_dir
+	docker stop jensberg047.github.io.builder
+	docker pull ghcr.io/wilsonify/jensberg047.github.io.builder:main && $(call ver_file, $@)
 
 /docs/index.html:
 	docker run --rm \

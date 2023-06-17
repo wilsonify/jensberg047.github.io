@@ -1,10 +1,10 @@
 on:
   workflow_dispatch:
-  push:
+  pull_request:
     branches:
       - 'main'
 
-name: Knit docs
+name: Ensure Knit-able
 
 jobs:
   deploy:
@@ -23,9 +23,3 @@ jobs:
           --volume /home/runner/work/jensberg047.github.io/jensberg047.github.io:/usr/src/app \
           ghcr.io/wilsonify/jensberg047.github.io.builder:main \
           R -e 'rmarkdown::render_site()'
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs

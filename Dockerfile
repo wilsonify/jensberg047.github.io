@@ -1,4 +1,4 @@
-FROM ghcr.io/wilsonify/jensberg047.github.io.builder:main as builder
+FROM ghcr.io/jensberg047/jensberg047.github.io.builder:main as builder
 COPY . /usr/src/app
 WORKDIR /usr/src/app
 RUN apt-get install -y pandoc

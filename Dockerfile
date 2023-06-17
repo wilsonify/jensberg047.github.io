@@ -1,7 +1,7 @@
 FROM jensberg047.github.io.builder:latest as builder
 COPY . /usr/src/app
 WORKDIR /usr/src/app
-RUN Rscript -e 'rmarkdown::render_site()'
+RUN R -e 'rmarkdown::render_site()'
 
 FROM nginx:latest
 EXPOSE 80

@@ -1,4 +1,6 @@
 
+all: image
+
 base:
 	docker build --progress=plain -t ghcr.io/wilsonify/jensberg047.github.io.base:latest -f Dockerfile-base .
 
@@ -7,6 +9,9 @@ builder: base
 
 image: builder
 	docker build --progress=plain -t ghcr.io/wilsonify/jensberg047.github.io:latest -f Dockerfile .
+
+run: image
+	docker run --rm --name jensberg047.github.io -p 32768:80 ghcr.io/wilsonify/jensberg047.github.io:latest
 
 /docs/index.html:
 	docker run --rm \

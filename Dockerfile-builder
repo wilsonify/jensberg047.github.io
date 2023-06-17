@@ -1,4 +1,4 @@
-FROM jensberg047.github.io.base:latest
+FROM ghcr.io/wilsonify/jensberg047.github.io.base:main
 WORKDIR /usr/src/app
 RUN apt-get install -y gpg software-properties-common
 RUN gpg --keyserver keyserver.ubuntu.com --recv-key E298A3A825C0D65DFD57CBB651716619E084DAB9

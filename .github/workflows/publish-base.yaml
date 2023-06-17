@@ -1,4 +1,4 @@
-name: publish builder image
+name: publish base image
 
 on:
   workflow_dispatch:
